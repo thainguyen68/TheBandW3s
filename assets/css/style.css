@@ -129,7 +129,7 @@
     margin-top: 46px;
     padding-top: 50%;
 /* padding mà có kqua ghi % thì n sẽ tỷ lệ theo % của chiều rộng của chính nó */
-    background: url(/assets/img/slider/slider1.jpg)
+    background: url(../img/slider/slider1.jpg)
     top center/ cover no-repeat ; 
 /* dấu / là để đi thẳng vào thư mục chứa ảnh
 còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
