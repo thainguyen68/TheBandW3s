@@ -7,6 +7,7 @@
 
 
  html {
+    scroll-behavior: smooth; /* hành động cuộn trang khi ấn vào nav */
      font-family:Arial, Helvetica, sans-serif;
  /* chỉnh font chữ về dạng ko chân */
     }
@@ -216,7 +217,7 @@ còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 0px;
+    padding: 64px 0px 112px;
 }
 
 #content .section-heading{
@@ -298,7 +299,6 @@ còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
     /* Place */
     .place-list {
         margin-top: 32px;
-        margin-bottom: 48px;
     } /* hay: margin: 32px -8px 0 */
 
     .place-img {
@@ -379,18 +379,32 @@ còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
     color: #000;
 }
 
-
-
-
-
-
-
-
-
-#footer {
-
+.map-img{
+    width: 100%;
+    filter: grayscale(50%);
 }
 
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+.socials-list{
+    font-size: 24px;
+}
+.socials-list a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+.coppyright a:hover,
+.socials-list a:hover{
+    opacity: 0.6;
+}
+.coppyright{
+    margin-top: 15px;
+}
+.coppyright a{
+    color: rgba(0, 0, 0, 0.6); 
+}
 
 
 
