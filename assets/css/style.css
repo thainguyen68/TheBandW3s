@@ -22,12 +22,52 @@
 4. Kiểu dáng
 */
 
+/* common */
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after{
+    clear: both;
+    display: block;
+    content: "";
+}
+
+.colum {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.colum-full{
+    width: 100%;
+}
+.colum-half{
+    width: calc(100%/2);
+}
+
+.colum-third {
+    width: calc(100%/3);
+}
+
+
 .clear{
     clear: both; /* xóa thuộc tính float để bao chọn ảnh,nội dung mà n float */
 }
 .text-white{
     color: #fff !important;
 }
+.text-center {
+    text-align: center !important;
+} 
+/* căn giữa chữ mọi trường hợp */
+
+
+
+
+
+
+
+/* Main */
 #main {
 }
 #nav{display: inline-block;}
@@ -206,11 +246,7 @@ còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
     overflow: hidden;
 }
 
-#content .member-item {
-    float: left;
-    text-align: center;
-    width: 33.33%; /* hoặc width:calc(100%/3) để căn 3 ảnh chiếm chọn dòng   */
-}
+
 
 #content .member-name{
     font-size: 15px;  
@@ -262,16 +298,9 @@ còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
     /* Place */
     .place-list {
         margin-top: 32px;
-        margin-left: -8px;
-        margin-right: -8px;
-        /* hay: margin: 32px -8px 0 */
-        padding-bottom: 48px;
-    }
-    .place-item {
-        float: left;
-        width: calc(100%/3);
-        padding: 0px 8px;
-    }
+        margin-bottom: 48px;
+    } /* hay: margin: 32px -8px 0 */
+
     .place-img {
         width: 100%;
         display: block;
@@ -303,11 +332,55 @@ còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
         padding: 11px 16px;
         display: inline-block;
         margin-top: 15px;
+        cursor: pointer;
     }
     .place-buy-btn:hover{
         background-color: #ccc;
         color: #000
     }
+
+
+/* contact form */
+.contact-content{
+    margin-top: 48px;
+}
+.contact-infor{
+    font-size: 18px;
+    line-height: 1.4;
+}
+.contact-infor i[class*="ti-"]{
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+.contact-form .form-control{
+    padding: 12px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.mt8{
+    margin-top: 8px;
+}
+.mt16{
+    margin-top: 16px;
+    padding: 12px 17px;
+    float: right;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    
+}
+.mt16:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+
+
 
 
 
