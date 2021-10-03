@@ -1,0 +1,28 @@
+ /* PC */
+ @media (min-width: 1024px) {
+    
+}
+
+/* tablet */
+@media (max-width: 1023px) and (min-width: 740px) {
+  
+}
+
+/* mobile */
+@media (max-width: 740px) {
+    #nav {
+        display: block;
+    }
+    #nav>li {
+        display: block;
+    }
+    #nav>li:first-child { /* biến giả để chỉ có thằng đầu tiên trong nav */
+        display: inline-block;
+    }
+    #header .search-btn {
+        display: none;
+    }
+    #header .menu-btn {
+        display: block;
+    }
+}

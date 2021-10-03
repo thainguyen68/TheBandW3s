@@ -71,11 +71,12 @@
 /* Main */
 #main {
 }
-#nav{display: inline-block;}
+
 /* display: inline {Với kiểu này thì các item sẽ nằm trên cùng một dòng, Các item có kiểu display này không thể set width và height, Các inline item sẽ chỉ có thể điều chỉnh margin và padding left and right (top và bottom thì không thể)}. 
    display: block {luôn được xuống dòng và chiếm toàn bộ width nếu width không được set. Các item có kiểu display: block sẽ set được width, height, margin, padding đầy đủ 4 hướng (top, bottom, right, left).}
    display: inline-block {Kiểu display này sẽ thường được sử dụng để tạo thanh navbar. sẽ được sắp xếp giống với kiểu display: inline, nghĩa là các items sẽ được xếp cùng nhau trên một dòng . Tuy nhiên các items sẽ có thuộc tính của display: block như là có set width, height, margin, padding đủ 4 hướng.}
 */
+#nav{display: inline-block;}
 
 #header {
     height: 46px;
@@ -86,18 +87,24 @@
     left: 0;
     z-index: 1; /* z-index dùng để tăng giảm chiều sâu
     trong th này để thanh nav hiện lên trên ảnh khi kéo do bị trùng position */
+    overflow: hidden;
 }
 
+
 #nav .subnav {
-    list-style: none;
+    list-style-type: none;
 }
 /* để ko hiện các biểu tượng ký tự khi dùng ul,ol,li  */
 
 #nav li {
-    display: inline-block;
     position: relative;
 }
-
+#nav>li {
+    display: inline-block;
+}
+#nav>li:first-child { /* biến giả để chỉ có thằng đầu tiên trong nav */
+    display: inline-block;
+}
 /* #nav>li>a nghĩa là chỉ tác động cấp1 vào thẻ a của li nằm trong nav
  còn #nav li a sẽ tác động vào tất cả các cấp của thẻ có a li nằm trong nav*/
 #nav>li>a {
@@ -147,22 +154,41 @@
     font-size: 12px;
 }
 
+
+/* chỉnh icon kính lúp    và   menu icon*/ 
+#header .menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 21px;
+}
+
+#header .menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#header .menu-btn:hover {
+    background-color: #ccc;
+ 
+}
+#header .menu-btn:hover .menu-icon {
+    color: #000;
+} /* khi hover vào thằng menu-btn thì thg menu-icon cũng css */
+
+#header .search-btn:hover {
+    background-color: red;
     cursor: pointer; 
     /* cursor: pointer; di chuột vào element có nó hiện bàn tay */
 }
 
-/* chỉnh icon kính lúp */
-#header .search-btn:hover {
-    background-color: red;
-}
- #header .search-icon {
+#header .menu-icon,
+#header .search-icon {
      color: #fff;
      font-size: 20px;
      line-height: 46px;
- }
+}
 
 
 
@@ -215,9 +241,12 @@ còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
 }
 #content .content-section {
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 64px 0px 112px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading{
@@ -508,4 +537,3 @@ i.ti-bag {
         transform: translateY(0px);
     }
 }
-

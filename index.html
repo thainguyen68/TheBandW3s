@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Band</title>
-    <link rel="icon" href="./favicon-thai.ico" type="image/x-icon" />
+    <link rel="icon" href="./favicon-thai.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
 </head>
 <body>
@@ -19,7 +20,7 @@
                 <li><a href="#Tour">Tour</a></li>
                 <li><a href="#Contact">Contact</a></li>
                 <li>
-                    <a href="">
+                    <a href="#">
                         More
                         <i class="nav-arrow-down ti-angle-down"></i>
                     </a>
@@ -33,12 +34,14 @@
             <!-- End nav -->
 
             <!-- begin: Search button -->
-            <!-- begin: Search button -->
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
             </div>
+            <div id="mobile-menu" class="menu-btn">
+                <i class="menu-icon ti-menu"></i>
+            </div>
             <!-- end: Search button -->
-             </div>
+        </div>
 
         <div id="slider">
             <div class="text-content">
@@ -203,11 +206,9 @@
 
     <script>
         //Đặt biến:
-
         const buyBtns = document.querySelectorAll('.js-buy-ticket') 
         /* đặt tên 3 thằng vào buyBtns để js lấy vào */
         /* const tạo biến buyBtns, document.querySelectorAll lấy dữ liệu từ tất cả elemt có tên js-buy-ticket*/
-       
         const modal = document.querySelector('.js-modal') 
         const modalClose =document.querySelector('.js-modal-close')
         const modalContainer =document.querySelector('.js-modal-container')
@@ -217,13 +218,11 @@
         //hàm hiển thị thêm open vào modal tạo thành thẻ mới .modal.open(thẻ này đã tạo thuộc tính ở style)
         function showBuyTickets() {
             modal.classList.add('open')
-        }
-        /* modal.classlist.add(thêm element vào) */
+        }/* modal.classlist.add(thêm element vào) */
         
-        //hàm gỡ bỏ open
         function hideBuyTickets() {
             modal.classList.remove('open')
-        }
+        } /* modal.classlist.add(thêm element vào) */
 
 
         for (const buyBtn of buyBtns) {
@@ -247,6 +246,35 @@
         // dùng để khắc phục việc trên. nó sẽ ko đóng trong vùng có chứa thẻ modalContainer hay là modal đang hiện.
     </script>
 
+
+
+    <script>
+        var header = document.getElementById('header'); /* đặt biến lấy dữ liệu từ thẻ id */
+        console.log(header) /* ktra thử xem đã lên chưa */
+        var mobileMenu = document.getElementById('mobile-menu');
+       
+        /* đóng mở Mobile-menu */
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === 46 /*  lệnh đặt biến đóng có chiều cao của header =46 */
+            if(isClosed) {
+                 header.style.height = 'auto'; 
+            } else {
+                header.style.height = null;
+            }
+        } /* ý nghĩa nếu đúng là nó đóng thì khi click vào mobileMenu sẽ chạy dòng code height=auto để mở
+        còn nếu ko -ko là không đóng đấy: thì nó sẽ chạy dòng code height=null để đóng  */
+
+        /* tự động đóng khi chọn elemet trong menu */
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]');/* đặt biến menuItems lấy dl từ thẻ a có href là # */
+        for(var i=0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+            console.log(menuItem)
+        
+            menuItem.onclick=function() {
+            header.style.height = null;
+            }
+        }   
+    </script>
 
 </body>
 </html>
