@@ -10,6 +10,15 @@
 
 /* mobile */
 @media (max-width: 740px) {
+    #header {
+    overflow: hidden;
+    }
+    #header .search-btn {
+        display: none;
+    }
+    #header .menu-btn {
+        display: block;
+    }
     #nav {
         display: block;
     }
@@ -19,10 +28,15 @@
     #nav>li:first-child { /* biến giả để chỉ có thằng đầu tiên trong nav */
         display: inline-block;
     }
-    #header .search-btn {
-        display: none;
+    #nav li a {
+        padding: 1px 24px;
     }
-    #header .menu-btn {
-        display: block;
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+    #nav .subnav a {
+        color: #fff;
+        padding: 4px 41px;
     }
 }

@@ -33,14 +33,14 @@
             </ul>
             <!-- End nav -->
 
-            <!-- begin: Search button -->
+            <!-- begin: Search & menu button -->
             <div class="search-btn">
                 <i class="search-icon ti-search"></i>
             </div>
             <div id="mobile-menu" class="menu-btn">
                 <i class="menu-icon ti-menu"></i>
             </div>
-            <!-- end: Search button -->
+            <!-- end: Search & menu button -->
         </div>
 
         <div id="slider">
@@ -264,14 +264,21 @@
         } /* ý nghĩa nếu đúng là nó đóng thì khi click vào mobileMenu sẽ chạy dòng code height=auto để mở
         còn nếu ko -ko là không đóng đấy: thì nó sẽ chạy dòng code height=null để đóng  */
 
+        
         /* tự động đóng khi chọn elemet trong menu */
         var menuItems = document.querySelectorAll('#nav li a[href*="#"]');/* đặt biến menuItems lấy dl từ thẻ a có href là # */
         for(var i=0; i < menuItems.length; i++) {
             var menuItem = menuItems[i];
             console.log(menuItem)
         
-            menuItem.onclick=function() {
-            header.style.height = null;
+            menuItem.onclick=function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav')
+                /* ý nghĩa là đặt biến isParentMenu nếu là thẻ cha và trong nó có chứa thẻ subnav thì nó đúng */
+                if(isParentMenu) {
+                    event.preventDefault(); /* nếu đúng thì bỏ qua sự kiện này */
+                } else {
+                    header.style.height = null; /* nếu sai thì null hay là đóng menu lại */
+                }    
             }
         }   
     </script>

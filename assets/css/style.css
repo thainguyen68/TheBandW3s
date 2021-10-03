@@ -87,7 +87,7 @@
     left: 0;
     z-index: 1; /* z-index dùng để tăng giảm chiều sâu
     trong th này để thanh nav hiện lên trên ảnh khi kéo do bị trùng position */
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 
@@ -102,9 +102,7 @@
 #nav>li {
     display: inline-block;
 }
-#nav>li:first-child { /* biến giả để chỉ có thằng đầu tiên trong nav */
-    display: inline-block;
-}
+
 /* #nav>li>a nghĩa là chỉ tác động cấp1 vào thẻ a của li nằm trong nav
  còn #nav li a sẽ tác động vào tất cả các cấp của thẻ có a li nằm trong nav*/
 #nav>li>a {
