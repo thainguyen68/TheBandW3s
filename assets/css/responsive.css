@@ -39,4 +39,15 @@
         color: #fff;
         padding: 4px 41px;
     }
+    .member-item{
+        width: 100%;
+        margin-top: 30px;
+    }
+    #content .member-img {
+        width: 60%;
+    }
+    .place-item {
+        width: 100%;
+        margin-top: 16px;
+    }
 }

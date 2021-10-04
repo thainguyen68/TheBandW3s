@@ -66,12 +66,6 @@
 
 
 
-
-
-/* Main */
-#main {
-}
-
 /* display: inline {Với kiểu này thì các item sẽ nằm trên cùng một dòng, Các item có kiểu display này không thể set width và height, Các inline item sẽ chỉ có thể điều chỉnh margin và padding left and right (top và bottom thì không thể)}. 
    display: block {luôn được xuống dòng và chiếm toàn bộ width nếu width không được set. Các item có kiểu display: block sẽ set được width, height, margin, padding đầy đủ 4 hướng (top, bottom, right, left).}
    display: inline-block {Kiểu display này sẽ thường được sử dụng để tạo thanh navbar. sẽ được sắp xếp giống với kiểu display: inline, nghĩa là các items sẽ được xếp cùng nhau trên một dòng . Tuy nhiên các items sẽ có thuộc tính của display: block như là có set width, height, margin, padding đủ 4 hướng.}
@@ -87,7 +81,6 @@
     left: 0;
     z-index: 1; /* z-index dùng để tăng giảm chiều sâu
     trong th này để thanh nav hiện lên trên ảnh khi kéo do bị trùng position */
-    /* overflow: hidden; */
 }
 
 
@@ -231,12 +224,6 @@ còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
 }
 
 
-
-
-
-
-#content {
-}
 #content .content-section {
     width: 800px;
     max-width: 100%;
@@ -447,6 +434,7 @@ còn sau dấu gạch chéo thứ 2 để ngăn cách phần tử */
 }
 .modal.open {
     display: flex;
+    z-index: 1;
 }
 
 .modal-container {
