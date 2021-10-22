@@ -57,4 +57,10 @@
     .colum.colum-half.contact-infor {
         margin-bottom: 16px;
     }
+    .row.mt8 {
+        margin-top: 0;
+    }
+    .colum.colum-half {
+        margin-bottom: 8px;
+    }
 }
